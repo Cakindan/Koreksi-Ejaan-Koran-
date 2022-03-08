@@ -3,6 +3,7 @@ Koreksi Ejaan merupakan web aplication untuk mengoreksi dan mendeteksi sekumpula
 
 NAMA KELOMPOK ANDA <br/>
 Ketua Kelompok: 
-Anggota 1: Thoriq Faisal Yahya - 19/444074/TK/49270
+Anggota 1: 
 Anggota 2: 
 Anggota 3: 
+Anggota 4: Thoriq Faisal Yahya - 19/444074/TK/49270
