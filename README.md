@@ -2,7 +2,7 @@
 Koreksi Ejaan merupakan web aplication untuk mengoreksi dan mendeteksi sekumpulan kalimat dari kesalahan dalam penulisan kata.
 
 NAMA KELOMPOK ANDA <br/>
-Ketua Kelompok: Iman Kahfi Aliza<br/>
-Anggota 1: Farhan Dzaky Ananda<br/>
-Anggota 2: Thoriq Faisal Yahya<br/>
-Anggota 3: Attar Husna Fathiya<br/>
+Ketua Kelompok: Iman Kahfi Aliza (19/440887/TK/48681)<br/>
+Anggota 1: Farhan Dzaky Ananda (19/440886/TK/48680)<br/>
+Anggota 2: Thoriq Faisal Yahya (19/444074/TK/49270)<br/>
+Anggota 3: Attar Husna Fathiya (19/440304/TK/48631)<br/>
