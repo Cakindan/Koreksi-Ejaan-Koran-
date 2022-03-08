@@ -2,8 +2,7 @@
 Koreksi Ejaan merupakan web aplication untuk mengoreksi dan mendeteksi sekumpulan kalimat dari kesalahan dalam penulisan kata.
 
 
-NAMA KELOMPOK ANDA 
-
+NAMA KELOMPOK ANDA <br/>
 Ketua Kelompok: Iman Kahfi Aliza
 
 Anggota 1: Farhan Dzaky Ananda
