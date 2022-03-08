@@ -24,3 +24,6 @@
 5. Ide Solusi : Dari permasalahan di atas, kami tertarik untuk mengembangkan aplikasi berbasis website yang berguna untuk melakukan koreksi ejaan terhadap sebuah penulisan. Dari website tersebut dapat digunakan untuk melakukan koreksi ejaan pada sebuah teks atau artikel, cukup dengan paste teks dalam textbox.
 
 6. Analisis Kompetitor : 
+    - Kompetitor 1 : SIPEBI
+    - Kompetitor 2 : U-TAPIS
+    - Kompetitor 3 : ejaan.id
