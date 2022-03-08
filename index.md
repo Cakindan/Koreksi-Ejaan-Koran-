@@ -13,6 +13,14 @@
 
 # Jawaban Modul 1
 
-1. Nama produk :
+1. Nama Produk : Koreksi Ejaan (Koran)
 
-2. 
+2. Jenis Produk : Aplikasi Web
+
+3. Latar Belakang : Di dunia digital, perkembangan penulisan berbagai hal seperti artikel, jurnal, dan blog menjadi meningkat dengan cepat. Akan tetapi, dalam penulisan panjang yang lebih dari 1000 kata, menjadi tantangan tersendiri dalam hal spelling check atau pengecekan penulisan ejaan kata. Terlebih lagi KBBI yang diperbarui setiap waktu juga terkadang menyulitkan untuk mencari tahu kata mana yang tepat.
+
+4. Rumusan Permasalahan : Bagaimana cara untuk menciptakan aplikasi berbasis web untuk mengecek ejaan yang sesuai dengan KBBI?
+
+5. Ide Solusi : Dari permasalahan di atas, kami tertarik untuk mengembangkan aplikasi berbasis website yang berguna untuk melakukan koreksi ejaan terhadap sebuah penulisan. Dari website tersebut dapat digunakan untuk melakukan koreksi ejaan pada sebuah teks atau artikel, cukup dengan paste teks dalam textbox.
+
+6. Analisis Kompetitor : 
