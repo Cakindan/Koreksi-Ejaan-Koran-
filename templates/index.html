@@ -12,17 +12,6 @@
 </head>
 
 <body>
-	<!-- <h1>Spell Check</h1>
-
-		<form action="predict" method="POST">
-			<label form="description">Description:</label>
-			<input type="text" id="description" name="description" value="{{ request.form['description'] }}>
-			<button type="submit" class=cv_btn>Predict Code</button>
-
-		</form>
-		<br>
-		<br>
-		Prediction: {{ prediction_text }} -->
         <div class="nav">
             <div class="footer">
                 <div class="name"></div>
@@ -35,9 +24,9 @@
                     <span class="med">media sosial <br> @koran.id</span>
                 </div>
                 <div class="komponen">
-                    <span class="beranda">Beranda</span>
-                    <span class="ttgkoran">Tentang Koran</span>
-                    <span class="ttgkami">Tentang kami</span>
+                    <a class="beranda" href="#beranda">Beranda</a>
+                    <a class="ttgkoran" href="#koran">Tentang Koran</a>
+                    <a class="ttgkami" href="#kami">Tentang kami</a>
                 </div>
                 <div class="tagline">
                     <span class="tahun">2022</span>
@@ -79,12 +68,12 @@
                     <span class="caki">Dzaki / Software Eng</span>
                     <span class="thor">Thoriq / AI Eng</span>
                 </div>
-                <div class="us">
+                <div class="us" id="kami">
                     <span class="aboutus">Tentang Kami</span>
                     <span class="nama">beauty and the beast</span>
                 </div>
             </div>
-            <div class="lb">
+            <div class="lb" id="koran">
                 <div class="latbel">
                     <span class="ket1">Dari permasalahan di atas, kami tertarik untuk mengembangkan aplikasi berbasis website yang berguna untuk melakukan koreksi ejaan terhadap sebuah penulisan. Dari website tersebut dapat digunakan untuk melakukan koreksi ejaan pada sebuah teks atau artikel, cukup dengan paste teks dalam textbox.</span>
                     <span class="ket2">Di dunia digital, perkembangan penulisan berbagai hal seperti artikel, jurnal, dan blog menjadi meningkat dengan cepat. Akan tetapi, dalam penulisan panjang yang lebih dari 1000 kata, menjadi tantangan tersendiri dalam hal spelling check atau pengecekan penulisan ejaan kata. Terlebih lagi KBBI yang diperbarui setiap waktu juga terkadang menyulitkan untuk mencari tahu kata mana yang tepat.</span>
@@ -106,20 +95,20 @@
                 </div>
             </div>
             <div class="logo_beranda">
-                <div class="lgb">
+                <div class="lgb" id="beranda">
                     <img src="{{ url_for('static', filename='img/logo.svg') }}" >
                 </div>
                 <div class="beranda_atas">
-                    <span class="beranda_atas1">Beranda</span>
-                    <div class="beranda_atas2"></div>
+                    <div class="beranda_atas1">Beranda</div>
+                    <a class="beranda_atas2" href="#beranda"></a>
                 </div>
             <div class="ttgkoran_atas">
                 <div class="ttgkoran_atas1"></div>
-                <span class="ttgkoran_atas2">Tentang Koran</span>
+                <a class="ttgkoran_atas2" href="#koran">Tentang Koran</a>
             </div>
                 <div class="ttgkami_atas">
                     <div class="ttgkami_atas1"></div>
-                    <span class="ttgkami_atas2">Tentang Kami</span>
+                    <a class="ttgkami_atas2" href="#kami">Tentang Kami</a>
                 </div>
         </div>
         <div class="masukkan">
@@ -142,11 +131,15 @@
         <div class="hasil">
             <div class="hasil1">
                 <div class="hasil2">
-                    <h3 class="hasiltext">{{ prediction_text }}</h3>
+                    <h4 class="hasiltext">{{ prediction_text }}</h4>
                 </div>
             </div>
         </div>
     </div>
+    <!-- <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript">
+            
+    </script> -->
 </body>
 </html>
 

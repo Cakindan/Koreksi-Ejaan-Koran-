@@ -5,7 +5,11 @@
 }
     body {
       font-size: 14px;
-      background:rgba(242, 247, 250, 1)
+      background:rgba(242, 247, 250, 1);
+      
+    }
+    html {
+      scroll-behavior: smooth;
     }
     .nav {
       width: 100%;
