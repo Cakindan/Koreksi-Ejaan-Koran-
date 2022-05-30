@@ -770,8 +770,11 @@
       border: none;
       stroke: none;
       resize:none;
+      height: 100%;
+      margin: 20px;
       text-align: left;
-      font-size: 28px;
+      font-size: 26px;
       font-family: Roboto;
       font-weight: Regular;
+      overflow-y:auto;
     }
