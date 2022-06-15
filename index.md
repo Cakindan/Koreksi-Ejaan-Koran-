@@ -14,6 +14,7 @@
 # Jawaban Modul 1
 
 ### 1. Nama Produk : Koreksi Ejaan (Koran)
+# Link: koran.azurewebsites.net
 
 ### 2. Jenis Produk : Aplikasi Web
 
@@ -68,3 +69,101 @@ https://www.figma.com/file/ZIYHdBiVIufHFXcABgMu44/Koran-UI%2FUX?node-id=0%3A1
 &nbsp;&nbsp;&nbsp;&nbsp;Setelah diinput, data tersebut akan diolah dan diproses dengan Function App Azure. Dalam proses pengolahannya, proyek ini akan menggunakan 2 Function App berbeda dengan fungsinya masing-masing. Pertama adalah Function App Trigger Detect Language, fungsi ini merupakan tahap awal pengolahan data sebelum kita lanjut ke pengoreksian kalimat. Dalam fungsi ini, data yang telah diinput akan difilter apakah sesuai dengan ketentuan pengoreksian EYD (dalam hal ini adalah kalimat input merupakan Bahasa Indonesia). Bila gagal diidentifikasi sebagai Bahasa Indonesia, maka data tersebut akan dipindahkan ke dalam Azure Container Service. Azure Container Service sendiri berguna sebagai basis docker yang akan menangkap hasil fungsi input.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Fungsi kedua adalah Function App Trigger AI Spell Check. Fungsi ini merupakan tahapan lanjutan bila data memenuhi ketentuan yang ada. Fungsi Spell Check berfungsi sebagai basis penentuan bagian mana saja dalam kalimat input yang harus dikoreksi. Bila telah ditentukan, maka data tersebut akan dikerahkan ke Virtual Machine melalui Azure Load Balancer untuk diolah dan dikoreksi sesuai dengan EYD Bahasa Indonesia. Load balancer bertugas untuk mengatur beban kerja pada Virtual Machine. Data yang masuk akan diolah otomatis oleh load balancer dan dibagi ke Virtual Machine yang ada sesuai kondisi layanan. Virtual Machine yang tersedia merupakan Private Subnet dari virtual network proyek ini. Setelah selesai diolah dan dikoreksi menggunakan Virtual Machine, maka hasil tersebut akan dikembalikan lagi ke antarmuka Azure Static: Webapps SPA untuk ditampilkan pada user. Seluruh hasil proses pada tahapan proyek ini akan dicatat dalam cache yang tersedia. Basis dari cache yang kami pilih adalah Azure Cosmos DB Log.
+
+
+### Framework: Flask
+- Flask adalah kerangka kerja web mikro yang ditulis dengan PythonTeknologi Kecerdasan Buatan dan Pembelajaran Mesin juga akan berkembang
+- Termasuk dalam microframework karena tidak memerlukan library tertentu 
+- Flask tidak memiliki lapisan abstraksi database, validasi formulir, atau komponen lain di mana library pihak ketiga yang sudah ada menyediakan fungsi umum.
+- Namun, Flask mendukung ekstensi yang dapat menambahkan fitur aplikasi seolah-olah diimplementasikan di Flask itu sendiri.
+
+### Algoritma
+![Koreksi Ejaan](https://user-images.githubusercontent.com/55296421/173763484-7a5d7275-dd99-479d-a146-49e62e731018.png)
+
+### Pengujian Software
+Problem: Penulisan berbagai hal dalam digital terus berkembang pada penulisan yang lebih dari 1000 kata, menjadi tantangan dalam spelling check. selain itu KBBI yang diperbarui setiap waktu juga terkadang menyulitkan untuk mencari tahu kata mana yang tepat. 
+
+Dari problem tersebut kami mengembangkan aplikasi berbasis website yang berguna untuk melakukan koreksi ejaan terhadap sebuah penulisan. Dari website tersebut dapat digunakan untuk melakukan koreksi ejaan pada sebuah teks cukup dengan paste teks dalam textbox.
+
+SOP dalam Tabular Representation: 
+![image](https://user-images.githubusercontent.com/55296421/173763970-790992a6-6ce2-4e8a-b609-e91ce0ad4ae2.png)
+Persiapan tes
+  1. Hitung total test case
+    Total Test Case = 
+    (Total Working Time) x (Tester) / 
+    (Mean Time per Test Case)
+    = 45 minutes x 1 / 3 minutes 
+    = 15 test case
+
+  2. Hitung Threshold
+   Threshold = 0.5 / jumlah test
+   = 0.5 / 15
+   = 0.0333
+
+Tabel Test Case Estimation & Allocation
+![image](https://user-images.githubusercontent.com/55296421/173764262-67e8bce6-9b72-4006-98b8-76fb9caef976.png)
+
+![image](https://user-images.githubusercontent.com/55296421/173765187-8f390589-eed0-4344-8f68-993d4fad030f.png)
+![image](https://user-images.githubusercontent.com/55296421/173765251-23bb5a82-0369-45db-9ee6-4f749a6d2288.png)
+![image](https://user-images.githubusercontent.com/55296421/173765285-90484f20-0989-4b3e-b232-ee209a2fa575.png)
+
+Tabel Failure Data( Failure data menggunakan Reliability Demo Chart (RDC) dengan FIO: jumlah error / (total test case x mean time per test case) = 4/ (15 x 3 minutes) = 0.0889 failure/1 minute)
+![image](https://user-images.githubusercontent.com/55296421/173764386-32b44c89-f452-4ea4-bf23-c7618aa4f683.png)
+
+A. grafik perbandingan plot dari failure number dengan measure yang belum dan sudah dinormalisasi.
+![image](https://user-images.githubusercontent.com/55296421/173764469-50685abf-d161-476e-bf92-601a7437a937.png)
+
+B. Reliability Demonstration Chart dengan menggunakan Developers Risk (α) = 10%, Customers Risk (β) = 10%, dan Discrimination (γ) = 2
+Mencari nilai A dan B
+A=ln 1- α 	B=ln 1 -  
+			            A=ln 0.11- 0.1     	     B=ln 1 - 0.10.1 
+			            A= -2.197  	     B= 2.197
+
+Mencari batas area accept dengan continue dan batas area reject dengan continue.
+Batas area accept dengan continue
+	            Tn=A1-γ- ln  1-γ n
+Tn=-2.1971-2- ln 2 1-2 4
+Tn= 2.197- (-0.693) 4
+Tn= 2.197+ 2.772
+Tn= 4.969 
+Dari rumus diatas akan diketahui titik batas area accept dengan continue (Tn,n) yaitu (4.969, 4).
+Batas area reject dengan continue
+Tn=B1-γ- ln  1-γ n
+Tn=- 2,1971-2- ln 21-24
+Tn= -2.197- (-0.693) 4
+Tn= -2.197 + 2.772
+Tn= 0.575
+Dari rumus diatas akan diketahui titik batas area reject dengan continue (Tn,n) yaitu (0.575, 4).
+
+C. Mencari nilai intersep batas accept dengan garis horizontal n=0 dengan intersep batas reject dengan vertikal Tn=0. 
+
+Nilai dapat dicari menggunakan rumus Tn yang sebelumnya telah dijabarkan. Dengan memasukkan nilai n = 0 untuk batas area accept dengan continue dan Tn = 0 untuk batas area reject dengan continue, maka akan didapatkan
+
+Tn=-2.1971-2  → Tn = 2.197 , untuk batas area accept dengan continue → (2.197, 0)
+n=  2.197ln2	→ n = 3.1703 , untuk batas area reject dengan continue → (0, 3.1703)
+
+D. Reliability Demonstration Chart(RDC)
+![image](https://user-images.githubusercontent.com/55296421/173764730-152f01a7-cad1-41ea-9a8c-8500b54ca5ce.png)
+
+### Pengujian Kualitas Perangkat Lunak
+![image](https://user-images.githubusercontent.com/55296421/173764843-b5eb4fce-05a8-4b15-b467-8ba351d445a2.png)
+
+kelompok kami mengambil 3 karakteristik yakni :
+1. Functional Suitability
+Karakteristik yang mengukur sejauh mana sistem menyediakan fungsi yang memenuhi kebutuhan ketika digunakan dalam kondisi tertentu.
+Mengukur sukses atau gagal, yang mana test case menggunakan skala guttman. Skala ini digunakan untuk mengetahui jawaban yang riil terhadap suatu permasalahan. Dalam pengujian ini software dikatakan baik apabila perhitungan item fungsi mendekati 1 dengan rumus :
+X = I / P
+I : Jumlah fungsi yang berhasil
+P : jumlah fungsi yang dirancang
+X = 11 / 15
+= 0.733
+
+2. Performance Efficiency
+Karakteristik yang mengukur kinerja sistem yang relatif terhadap sumber daya yang digunakan dalam kondisi tertentu dimana terdapat subkarakteristik :
+Performa dan rating dari web dapat dipertimbangkan untuk menganalisis skor karakteristik dari aturan Yslow (memeriksa semua komponen kinerja halaman  dan memberikan saran perbaikan) dan Pagespeed (Kecepatan halaman web).
+Pada web yang tim kami kembangkan waktu respon webnya stabil selama : 5000ms atau 5 detik.
+![image](https://user-images.githubusercontent.com/55296421/173764986-2f68a52b-95b1-41e9-9c65-50c1e9f61cf8.png)
+
+3. Portability
+Karakteristik untuk mengukur keefektifan dan efisiensi dimana sebuah sistem terbilang baik apabila dapat berjalan di browser yang berbeda, hardware yang berbeda, dan sistem operasi yang berbeda.
+Untuk produk dari tim kami belum dikatakan baik sepenuhnya karena website yang kami kembangkan merupakan website non responsive sehingga ketika dijalankan pada hardware selain desktop dapat berjalan namun tidak maksimal. Contohnya interface pada smartphone seperti gambar di bawah ini.
