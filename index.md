@@ -114,25 +114,38 @@ A. grafik perbandingan plot dari failure number dengan measure yang belum dan su
 ![image](https://user-images.githubusercontent.com/55296421/173764469-50685abf-d161-476e-bf92-601a7437a937.png)
 
 B. Reliability Demonstration Chart dengan menggunakan Developers Risk (α) = 10%, Customers Risk (β) = 10%, dan Discrimination (γ) = 2
-Mencari nilai A dan B
+
+- Mencari nilai A dan B
 A=ln 1- α 	B=ln 1 -  
-			            A=ln 0.11- 0.1     	     B=ln 1 - 0.10.1 
-			            A= -2.197  	     B= 2.197
+A=ln 0.11- 0.1     	     B=ln 1 - 0.10.1 
+A= -2.197  	     B= 2.197
 
 Mencari batas area accept dengan continue dan batas area reject dengan continue.
 Batas area accept dengan continue
-	            Tn=A1-γ- ln  1-γ n
+Tn=A1-γ- ln  1-γ n
+
 Tn=-2.1971-2- ln 2 1-2 4
+
 Tn= 2.197- (-0.693) 4
+
 Tn= 2.197+ 2.772
+
 Tn= 4.969 
+
 Dari rumus diatas akan diketahui titik batas area accept dengan continue (Tn,n) yaitu (4.969, 4).
+
 Batas area reject dengan continue
+
 Tn=B1-γ- ln  1-γ n
+
 Tn=- 2,1971-2- ln 21-24
+
 Tn= -2.197- (-0.693) 4
+
 Tn= -2.197 + 2.772
+
 Tn= 0.575
+
 Dari rumus diatas akan diketahui titik batas area reject dengan continue (Tn,n) yaitu (0.575, 4).
 
 C. Mencari nilai intersep batas accept dengan garis horizontal n=0 dengan intersep batas reject dengan vertikal Tn=0. 
